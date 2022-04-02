@@ -1,6 +1,7 @@
 # Take Home Test
 
 Work completed:
+
     - Program written that takes the expected input through stdin and prints result to stdout, as well as generating the text file output/answer.txt
     - Geometry algorithms implemented to find if two line segments intersect and to calculate the euclidean distance between two points
     - Basic greedy approach implemented:
@@ -10,6 +11,7 @@ Work completed:
 
 
 Extensions if given more time:
+
     - 1. Extend the label generator to atleast consider intersections along the same line. 
     - 2. Further extend the label orientation to handle intersections with other lines. This could be done very similarly to how the unique line segments are generated. Essentially try all line segements and see if there is ever an intersection between them and the smallest zoom. 
       - Take the first label that does not intersect any lines at smallest zoom
