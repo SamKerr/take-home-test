@@ -57,7 +57,9 @@ class Point:
                 return LabelOrientation.TOP_LEFT
             else:
                 return LabelOrientation.BOTTOM_LEFT
-
+        
+        # default to top right
+        return LabelOrientation.TOP_RIGHT
 
 PolyLine = List[Point]
 class PolyLineLabelPlacement:
@@ -139,7 +141,6 @@ class PolyLineLabelPlacement:
             Arguments:
                 grouping_factor: an integer that can be changed to allow for faster processing by downsampling the input
         """
-
         poly_lines_with_grouped_points = np.array(self.poly_lines)
         for i in range(len(poly_lines_with_grouped_points)):
             poly_lines_with_grouped_points[i] = poly_lines_with_grouped_points[i][::grouping_factor]
@@ -160,6 +161,10 @@ class PolyLineLabelPlacement:
         # this allows the whole algorithm to run in just O(n^2)
         points_to_remove = set()
         for i,line in enumerate(poly_lines_with_grouped_points):
+            # if a line is 3 points or less, it will definately intersect at every point, so dont filter it out
+            if(len(line) <= 3):
+                continue
+
             for point in line:
                 if(point.next_point is not None):
                     line_segment = (point, point.next_point)
@@ -198,8 +203,8 @@ class PolyLineLabelPlacement:
         """
         output = []
         
-        # using a grouping factor of 3 since it gives a trade off between speed and accuracy
-        grouping_factor = 3
+        # using a grouping factor of 1 for small datasets but can be changed to improve speed on larger datasets
+        grouping_factor = 1
         unique_poly_line_segments = self._generate_unique_line_segments(grouping_factor)
         
         for line in unique_poly_line_segments:

@@ -1,8 +1,8 @@
-468395 107637 top-right
-468373 107767 bottom-left
-468583 107585 bottom-right
-467988 107563 bottom-left
-468259 107763 bottom-left
-467662 107525 top-left
-468576 108369 bottom-left
-468872 109260 bottom-left
+468421 107639 top-right
+468346 107778 bottom-left
+468258 107608 top-right
+467982 107569 bottom-left
+468252 107770 top-right
+467663 107542 top-left
+468548 108378 bottom-left
+468872 109260 bottom-right
