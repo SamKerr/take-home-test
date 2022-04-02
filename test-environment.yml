@@ -1,0 +1,10 @@
+name: gt_task
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - gdal=3.4.1
+  - python=3.10.2
+  - geopandas
+  - shapely
+  - matplotlib

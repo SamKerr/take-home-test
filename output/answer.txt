@@ -1,0 +1,8 @@
+468395 107637 top-right
+468373 107767 bottom-left
+468583 107585 bottom-right
+467988 107563 bottom-left
+468259 107763 bottom-left
+467662 107525 top-left
+468576 108369 bottom-left
+468872 109260 bottom-left
