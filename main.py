@@ -41,6 +41,10 @@ class Point:
             Uses a very simple heuristic to find which of the 4 label types to use
 
 
+            /\ -> Top Right
+            \/ -> Bottom Right
+            > -> Top Left
+            < -> Bottom Left
         """
         if(self.previous_point is not None and self.next_point is not None):
             prev_p = self.previous_point
@@ -53,7 +57,6 @@ class Point:
                 return LabelOrientation.TOP_LEFT
             else:
                 return LabelOrientation.BOTTOM_LEFT
-    
 
 
 PolyLine = List[Point]
